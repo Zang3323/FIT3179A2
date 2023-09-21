@@ -5,7 +5,7 @@
     "title": "Birth Rates (per 1000 people) across the World in 2021",
     "projection": {"type": "equalEarth"},
     "data": {
-      "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
+      "url": "https://raw.githubusercontent.com/Zang3323/FIT3179A2/main/ne_110m.json",
       "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
     },
     "transform": [
