@@ -11,6 +11,7 @@
   "params": [
     {
       "name": "Year_selection",
+      "value": 2003,
       "bind": {
         "input": "range",
         "min":2003,
