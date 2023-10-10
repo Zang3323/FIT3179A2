@@ -1,0 +1,61 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 600,
+  "height": 300,
+  "title": "Age Group Over Time",
+  "data": {
+    "url": "https://raw.githubusercontent.com/Zang3323/FIT3179A2/main/population-and-demography%20(Age).csv",
+    "format": {"type": "csv"}
+  },
+  "config": {"background": "rgb(230, 211, 176)"
+},
+  "transform": [
+    {
+      "fold": [
+        "Population aged 1 to 4 years",
+        "Population aged 5 to 9 years",
+        "Population aged 10 to 14 years",
+        "Population aged 15 to 19 years",
+        "Population aged 20 to 29 years",
+        "Population aged 30 to 39 years",
+        "Population aged 40 to 49 years",
+        "Population aged 50 to 59 years",
+        "Population aged 60 to 69 years",
+        "Population aged 70 to 79 years",
+        "Population aged 80 to 89 years",
+        "Population aged 90 to 99 years"
+      ],
+      "as": ["AgeGroup", "Population"]
+    },
+    {
+      "calculate": "replace(datum.AgeGroup, 'Population aged ', '')",
+      "as": "Age Group"
+    }
+  ],
+  "mark": "area",
+  "encoding": {
+    "x": {
+      "timeUnit": "year",
+      "field": "Year",
+      "axis": {"format": "%Y"},
+      "title": "Year"
+    },
+    "y": {
+      "aggregate": "sum",
+      "field": "Population",
+      "stack": "normalize",
+      "title": "Population",
+      "sort": {"field": "AgeGroup"}
+    },
+    "color": {
+      "field": "Age Group", 
+      "sort": {"field": "AgeGroup"},
+      "scale": {"scheme": "category20c"}
+    },
+    "tooltip": [
+      {"field": "Year","timeUnit": "utcyear", "title": "Year"},
+      {"field": "AgeGroup","type": "nominal", "title": "Age Group"},
+      {"field": "Population","aggregate": "sum","type": "quantitative", "title": "Population","format":",.0f"}
+    ]
+  }
+}
