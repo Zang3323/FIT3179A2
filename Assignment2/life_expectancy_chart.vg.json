@@ -1,0 +1,66 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 500,
+  "height": 250,
+  "title": "Life expectancy vs. Adult Mortality in 2012",
+  "data": {
+    "url": "https://raw.githubusercontent.com/Zang3323/FIT3179A2/main/Life%20Expectancy%20Data.csv",
+    "format": {"type": "csv"}
+  },
+  "params": [
+    {
+      "name": "Status_selection",
+      "bind": {
+        "input": "select",
+        "options": [null, "Developed", "Developing"],
+        "labels": ["Show all", "Developed", "Developing"],
+        "name": "Status selection: "
+      }
+    },
+    {
+      "name": "Adult_Mortality",
+      "value": 0,
+      "bind": {
+        "input": "range",
+        "min": 0,
+        "max": 500,
+        "step": 10,
+        "name": "Adult Mortality (per 1000 people): "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "(Status_selection == null || datum.Status == Status_selection) && datum['Adult Mortality'] >= Adult_Mortality"
+    },
+    {"filter": "datum.Year == 2012 "}
+  ],
+  "mark": "point",
+  "encoding": {
+    "x": {
+      "field": "Life expectancy ", 
+      "type": "quantitative", 
+      "scale": {"zero": false, "domain": [45, 90]}},
+    "y": {
+      "field": "Adult Mortality", 
+      "type": "quantitative", 
+      "title": "Adult Mortality Rate (15 to 60 yrs per 1000 people)",
+      "scale":{"zero": false, "domain": [0, 550]}
+    },
+    "color": {
+      "field": "Status",
+      "type": "nominal",
+      "scale": {
+      "domain": ["Developed", "Developing"],
+      "range": ["#D46A6A", "#1f77b4"]
+  },
+  "legend": {"orient": "bottom"}
+    },
+    "tooltip": [
+      {"field": "Country", "type": "nominal", "title": "Country"},
+      {"field": "Status", "type": "nominal", "title": "Development Status"},
+      {"field": "Adult Mortality", "type": "quantitative", "title": "Adult Mortality Rate (per 1000 people)"},
+      {"field": "Life expectancy ", "type": "quantitative", "title": "Life Expectancy"}
+    ]
+  }
+}

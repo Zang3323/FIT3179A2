@@ -1,0 +1,134 @@
+body * {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+    font-weight: 900;
+}
+
+body {
+    background-color: lightgray;
+    width: 1080px;
+    margin: auto;
+}
+
+.page {
+    width: 850px;
+    background-color: white;
+    margin: auto;
+    padding: 50px;
+    padding-top: 35px;
+}
+
+.vis-container {
+    width: 100%;
+}
+
+.description h2,
+h1 {
+    margin-top: 0px;
+}
+
+.description-right {
+    padding-left: 20px;
+}
+
+.description-left {
+    padding-right: 20px;
+}
+
+.pure-g {
+    margin-bottom: 40px;
+}
+
+.small-font {
+    font-size: 14px;
+}
+
+.head {
+    text-align: center;
+    align-items: center;
+    font-family: helvetica;
+    margin: 0;
+
+
+}
+
+body * {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: auto;
+
+}
+
+
+
+body {
+    background-image: url("photo.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+}
+
+
+.page {
+    width: 1000px;
+    margin: auto;
+    padding: 50px;
+    box-shadow: 1px 2px 3px 4px rgba(20, 20, 20, 0.4);
+    background-color: aliceblue;
+    height: 2000px;
+}
+
+.bubble * {
+    margin-left: 130px;
+
+}
+
+.vis-container {
+    width: 100%;
+}
+
+.map-container {
+    align-items: center;
+    margin-top: 50px;
+
+}
+
+.description-right {
+    padding-left: 20px;
+}
+
+.map-description {
+    text-align: center;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+
+}
+
+.bar-description {
+    padding-right: 100px;
+}
+
+.pure-g {
+    margin-bottom: 70px;
+    margin-top: 0px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.small-font {
+    font-size: 14px;
+}
+
+
+
+#worldmapbirthrate {
+    width: 100%;
+}
+
+.word-spcaing {
+    word-spacing: 5px;
+}
